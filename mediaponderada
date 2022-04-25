@@ -1,0 +1,34 @@
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+Scanner j = new Scanner(System.in);
+
+int num = 0;
+int num2 = 0;
+int num3 = 0;
+int peso = 0;
+int peso2 = 0;
+int peso3 = 0;
+int mediapon = 0;
+
+System.out.println("Qual o primeiro número ?");
+num = j.nextInt();
+System.out.println("Qual o segundo número ?");
+num2 = j.nextInt(); 
+System.out.println("Qual o terceiro número ?");
+num3 = j.nextInt();
+System.out.println("Qual o peso do primeiro número ?");
+peso = j.nextInt();
+System.out.println("Qual o peso do segundo número ?");
+peso2 = j.nextInt();
+System.out.println("Qual o peso do terceiro número ?");
+peso3 = j.nextInt();
+
+mediapon = (num * peso) + (num2 * peso2) + (num3 + peso3) / (peso + peso2 + peso3);
+
+
+System.out.println("A media ponderada será:" + mediapon);
+
+
+}}
