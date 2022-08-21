@@ -1,0 +1,111 @@
+package AtividadeAnimais;
+import java.util.*;
+public class AtividadeAnimais {
+
+	public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+		Boolean pergunta;
+		Boolean perguntasanimais;
+		String opcoes;
+		
+
+		System.out.println("Seu animal é terrestre?");
+		pergunta = scan.nextBoolean();
+		
+		if(pergunta == true)
+		{  
+			System.out.println("Seu animal é um mamífero ?");
+			pergunta = scan.nextBoolean();
+			if(pergunta == true)
+			{  
+			System.out.println("Seu animal é um felino?");
+			pergunta = scan.nextBoolean();
+			if(pergunta == true)
+			{  
+				System.out.println("Seu animal é possui juba ?");
+				pergunta = scan.nextBoolean();
+				if(pergunta == true)
+				{ System.out.println("Seu animal é um leão"); }
+				else {
+					System.out.println("Seu animal é um tigre");
+				}
+			}
+			else {
+				System.out.println("Seu animal é maluco capaz de saltar de arvoré em arvoré como uma bayblade ?");
+				pergunta = scan.nextBoolean();
+				if(pergunta == true)
+				{
+					System.out.println("Seu animal é um Carcaju");
+				}
+				
+			}
+			}
+	
+		}
+		
+		else {
+			System.out.println("Seu animal é voador ?");
+			perguntasanimais = scan.nextBoolean();
+			if(perguntasanimais == true) {
+				System.out.println("Seu animal consegue falar algumas palavras ?");
+				perguntasanimais = scan.nextBoolean();
+				if(perguntasanimais == true) {
+				System.out.println("Seu animal é um papagaio");
+				}
+				else {
+					System.out.println("Seu animal é considerado um rato com asas ?");
+					perguntasanimais = scan.nextBoolean();
+					System.out.println("Seu animal é um pombo");
+				}
+				
+				}
+			else {
+				System.out.println("Seu animal é aquático?");
+				perguntasanimais = scan.nextBoolean();
+				if(perguntasanimais == true)
+				{
+					if(perguntasanimais == true)
+					{
+					System.out.println("Seu animal é mamífero?");
+					perguntasanimais = scan.nextBoolean();
+					if(perguntasanimais == true)
+					{
+						System.out.println("Seu animal é de grande porte?");
+						perguntasanimais = scan.nextBoolean();
+					}
+					if(perguntasanimais == true)
+					{
+						System.out.println("Seu animal é uma baleia");
+
+					}else {System.out.println("Seu animal é um golfinho");}
+				}}
+				else {
+					System.out.println("Seu animal conta piada?");
+					perguntasanimais = scan.nextBoolean();
+					if(perguntasanimais == true)
+					{System.out.println("Seu animal é o peixe palhaço");}
+					else {
+						System.out.println("Seu animal de vez enquando come um ou dois... humanos?");
+						perguntasanimais = scan.nextBoolean();
+						if(perguntasanimais == true)
+						{
+							System.out.println("Seu animal é um tubarão ou algum animal do fundo do mar");
+							perguntasanimais = scan.nextBoolean();
+						}
+						else {
+							System.out.println("Seu animal é um peixe random");
+						
+						}
+					}
+				}
+			}
+		
+		
+			}
+		}
+
+	
+		}
+
+
+
