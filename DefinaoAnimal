@@ -1,8 +1,6 @@
-package AtividadeAnimais;
 import java.util.*;
-public class AtividadeAnimais {
-
-	public static void main(String[] args) {
+class Main {
+public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
 		Boolean pergunta;
 		Boolean perguntasanimais;
@@ -106,6 +104,3 @@ public class AtividadeAnimais {
 
 	
 		}
-
-
-
