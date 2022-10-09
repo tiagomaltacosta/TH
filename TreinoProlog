@@ -1,0 +1,51 @@
+mae(X,_)
+filha(X,_)
+filho(X,_)
+grandmother(X,_)
+grandfather(X,_)
+neto(X, _)
+neta(X, _)
+irma(X,_)
+irmao(X,_)
+mae(maria,X)
+mae(silvia,X)
+filho(rodrigo,X)
+
+herda(X,ClsPessoa)
+herda(X,ClsAluno)
+herda(X,ClsProfessor)
+
+contrata(X,ItfPessoa)
+contrata(X,ItfProfessor)
+herda(ClsPessoa, X)
+herda(ClsProfessor, X)
+implementa(ClsAluno, X)
+
+piloto(maria, rodrigo).
+piloto(pedro, vitor).
+piloto(maria, rodrigo).
+marca("Emirates").
+marca("Aviacao").
+marca("Voadora").
+
+/* 2) Regras */
+pilotoedupla(X, Y) :- piloto(Z, X), piloto(Y, Z), dupla(X).
+piltocentral(X, Y) :- piloto(X, Z), piloto(Z, Y), central(X).
+polotosecundario(X, Y) :- piloto(Z, Y), piloto(Z, Y), secundario(X).
+
+piloto(maria, X)
+piloto(X, vitor)
+pilotocentral(X, vitor)
+
+/* 1) Fatos */
+vendedorcliente(pedro,carlos).
+vendedorcliente(james,carlos).
+vendedorcliente(jose,nivia).
+
+/* 2) Regras */
+cliente(X, Y) :- vendedorcliente(Z, X), cliente(X).
+vendedor(X, Y) :- vendedor(X, Z), vendedor(Z, Y), vendedor(X).
+vendedorCaixa(X, Y) :- vendedor(Z, Y), cliente(Z, Y), vendedorCaixa(X).
+
+
+
