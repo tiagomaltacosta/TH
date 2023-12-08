@@ -1,0 +1,98 @@
+package AulaGlender;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MenuOrdenacao {
+
+	public static void main(String[] args) {
+		
+		Scanner ler = new Scanner(System.in);
+	
+		int[] vetor = { 80,5,18,70,81,96,72,93,60, 3, 1, 12};
+		int mudancas = 0;
+		int opcao = 0;
+		System.out.println("Dado o vetor" + Arrays.toString(vetor));
+		System.out.println("Selecione as seguintes opções para ordená-lo: ");
+		
+		System.out.println(1 + " - Método bolha");
+		System.out.println(2 + " - Método de seleção");
+		System.out.println(3 + " - Método de inserção");
+		opcao = ler.nextInt();
+		
+		if(opcao == 1)
+		{
+			int aux = 0 ;
+			
+			for(int i = 0; i < vetor.length; i++)
+			{
+				for(int j = 0; j < vetor.length - 1; j++)
+				{
+					if(vetor[j] > vetor[j + 1])
+					{
+					  aux = vetor[j];
+					  vetor[j] = vetor[j + 1];
+					  vetor[j + 1] = aux;
+					}
+		
+				}
+				mudancas = i;
+	
+			}
+		
+			
+			System.out.println(Arrays.toString(vetor));
+			System.out.println("A quantidade de movimentos é: " + (mudancas - 1));
+			
+		} else if(opcao == 2)
+		{
+			int posicaomenor,aux2;
+			int mudancas2 = 0;
+			for(int i = 0; i < vetor.length; i++)
+			{
+				posicaomenor = i;
+				for(int j = i +1; j < vetor.length; j++)
+				{
+					if(vetor[j] < vetor[posicaomenor])
+					{
+						posicaomenor = j;
+					}
+		             
+				}
+				aux2 = vetor[posicaomenor];
+				vetor[posicaomenor] = vetor[i];
+				vetor[i] = aux2;
+				mudancas2 = i;
+			}			
+			System.out.println(Arrays.toString(vetor));
+			System.out.println("A quantidade de movimentos é: " + (mudancas2 - 1));
+		} else if(opcao == 3) {
+			int posant = 0;
+			int mudancas3 = 0;
+			for(int i = 1; i < vetor.length; i++)
+			{
+				int valorinicial = vetor[i];
+				
+				for(posant = i - 1; posant >= 0; posant--)
+				{
+					int valorant = vetor[posant];
+					if(valorinicial < valorant)
+					{
+						vetor[posant + 1] = vetor[posant];
+					}
+					else {
+						break;
+					}
+				}
+				vetor[posant + 1] = valorinicial;
+				mudancas3 = i;
+			}
+			System.out.println(Arrays.toString(vetor));
+			System.out.println("A quantidade de movimentos é: " + (mudancas3 - 1));
+		}
+
+		
+		
+	}
+
+}
