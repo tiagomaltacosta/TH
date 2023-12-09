@@ -1,0 +1,58 @@
+package AtividadeGlender;
+import java.util.*;
+class GrafoDivisao {
+    private int numvertices;
+    private LinkedList<Integer>[] adjacentes;
+
+    public GrafoDivisao(int numvertices) {
+        this.numvertices = numvertices;
+        adjacentes = new LinkedList[numvertices];
+
+        for (int i = 0; i < numvertices; i++) {
+            adjacentes[i] = new LinkedList<>();
+        }
+    }
+
+    public void AdicionarAresta(int v, int w) {
+        adjacentes[v].add(w);
+        adjacentes[w].add(v);
+    }
+
+    public void ColoracaoGrafo() {
+        int[] cores = new int[numvertices];
+        Arrays.fill(cores, -1);
+
+        ColoracaoGrafoRecursivo(0, numvertices - 1, cores);
+
+        for (int i = 0; i < numvertices; i++) {
+            System.out.println("Vértice " + i + " tem cor " + cores[i]);
+        }
+    }
+
+    public void ColoracaoGrafoRecursivo(int inicio, int fim, int[] cores) {
+        if (inicio <= fim) {
+            int meio = (inicio + fim) / 2;
+
+            ColoracaoGrafoRecursivo(inicio, meio, cores);
+            ColoracaoGrafoRecursivo(meio + 1, fim, cores);
+
+            int corDisponivel = 0;
+            for (int i = inicio; i <= fim; i++) {
+                cores[i] = corDisponivel;
+                corDisponivel++;
+            }
+        }
+    }
+}
+
+public class DivisaoEConquista {
+    public static void main(String[] args) {
+        GrafoDivisao grafo = new GrafoDivisao(3);
+
+        grafo.AdicionarAresta(0, 1);
+        grafo.AdicionarAresta(0, 2);
+        grafo.AdicionarAresta(1, 2);
+
+        grafo.ColoracaoGrafo();
+    }
+}
